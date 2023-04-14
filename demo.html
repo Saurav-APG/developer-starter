@@ -1,0 +1,10 @@
+<script>
+  const isStaging = window.location.origin.includes("webflow.io");
+  const script = document.createElement("script");
+  script.src = isStaging
+    ? 'http://localhost:3000/index.js'
+    : 'https://cdn.jsdelivr.net/gh/saurav-apg/developer-starter@1/dist/index.js';
+  script.defer = true;
+  document.currentScript.insertAdjacentElement("afterend", script);
+  // document.head.append(script)
+</script>
